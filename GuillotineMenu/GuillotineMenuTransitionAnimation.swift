@@ -66,7 +66,7 @@ open class GuillotineTransitionAnimation: NSObject {
     }
     
     //MARK: - Initialization
-    override init() {
+    override public init() {
         super.init()
         setupDisplayLink()
         setupSystemVersionAdjustment()
@@ -268,7 +268,7 @@ open class GuillotineTransitionAnimation: NSObject {
         let senderRect = supportView!.convert(presentButton!.frame, to: nil)
         containerMenuButton?.frame = senderRect
     }
-    
+
     //MARK: - Observer
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == myContext {

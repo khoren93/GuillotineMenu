@@ -22,16 +22,16 @@ import UIKit
     @objc optional func animatorWillStartDismissal(_ animator: GuillotineTransitionAnimation)
 }
 
-open class GuillotineTransitionAnimation: NSObject {
+public class GuillotineTransitionAnimation: NSObject {
 	
-    enum Mode { case presentation, dismissal }
+    public enum Mode { case presentation, dismissal }
     
     //MARK: - Public properties
-    weak var animationDelegate: GuillotineAnimationDelegate?
-    var mode: Mode = .presentation
-    var supportView: UIView?
-    var presentButton: UIView?
-    var duration = 0.6
+    public weak var animationDelegate: GuillotineAnimationDelegate?
+    public var mode: Mode = .presentation
+    public var supportView: UIView?
+    public var presentButton: UIView?
+    public var duration = 0.6
     
     //MARK: - Private properties
     fileprivate var chromeView: UIView?
@@ -270,7 +270,7 @@ open class GuillotineTransitionAnimation: NSObject {
     }
 
     //MARK: - Observer
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == myContext {
             setupContainerMenuButtonFrameAndTopOffset()
         } else {
